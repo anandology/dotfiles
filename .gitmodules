@@ -1,0 +1,6 @@
+[submodule "vender/textmate.el"]
+	path = vender/textmate.el
+	url = git://github.com/defunkt/textmate.el.git
+[submodule "vender/markdown-mode"]
+	path = vender/markdown-mode
+	url = git://github.com/defunkt/markdown-mode.git
