@@ -3,23 +3,19 @@
 (textmate-mode)
 
 ;; Color theme
-;; (require 'color-theme)
-;; (color-theme-initialize)
-;; (load-file "~/.emacs.d/color-theme-blue.el")
-;; (color-theme-blue)
+(require 'color-theme)
+(color-theme-initialize)
+(load-file "~/.emacs.d/color-theme-blue.el")
+(color-theme-blue)
 
-(defun setup-mode (name ext)
-    (autoload (intern name) (concat name ".el") (concat name " mode") t)
-   (setq auto-mode-alist
-	  (cons (cons ext name) auto-mode-alist))
-    )
-        
-(setup-mode "markdown-mode" "\\.md")
-(setup-mode "yaml-mode" "\\.yaml")
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;; turnoff toolbar
 (tool-bar-mode 0)
-
 
 ;; setup erlang mode
 (setq load-path (cons  "/opt/local/lib/erlang/lib/tools-2.6.2/emacs"
